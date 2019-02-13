@@ -13,15 +13,16 @@ class GalagaInvaders
   def initialize
     @caption = "Galaga Invaders"
     @ship = Ship.new(SCREEN_WIDTH / 2, HEIGHT - Ship::HEIGHT)
+    @missiles = ShipMissiles.new()
   end
 
   def update
-    @ship.move_missiles
+    @missiles.move_missiles
   end
 
   def draw
     @ship.draw
-    @ship.draw_missiles
+    @missiles.draw_missiles
   end
 
   def show
@@ -38,7 +39,7 @@ class GalagaInvaders
     when 'd'
       @ship.move_right
     when ' '
-      @ship.fire_missile
+      @missiles.create_missile
     end
   end
 
