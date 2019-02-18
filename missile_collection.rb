@@ -10,6 +10,10 @@ class MissileCollection
     missiles << missile
   end
 
+  def fire_from(ship)
+    add(Missile.new({ship.muzzle_location, :velocity => ship.ordinance_velocity}))
+  end
+
   def update
     missiles.each(&:move)
   end

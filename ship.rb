@@ -12,11 +12,9 @@ class Ship
     @x = screen_width / 2
     @y = screen_height - half_height
   end
-
-  def fire(missiles)
-    missile = Missile.new(x, top_edge)
-    missile.launch(-10)
-    missiles.add(missile)
+  
+  def ordinance_velocity
+    -10
   end
 
   def move_left
