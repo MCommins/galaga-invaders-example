@@ -22,6 +22,14 @@ class Alien
     "👾 (#{location})"
   end
 
+  def muzzle_location
+    Vector.new(location.x, bottom_edge)
+  end
+
+  def initial_velocity
+    -10
+  end
+
   def bottom_edge
     location.y + half_height
   end

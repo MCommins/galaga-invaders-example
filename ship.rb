@@ -17,6 +17,10 @@ class Ship
     Vector.new(location.x, top_edge)
   end
 
+  def initial_velocity
+    10
+  end
+
   def move_left
     move(-DEFAULT_VELOCITY)
   end
