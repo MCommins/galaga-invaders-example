@@ -1,12 +1,13 @@
-class Ship < Structure
+class Ship
+  include Locatable
+  include Destroyable
+  include Drawable
+
+  attr_accessor :location, :sprite
 
   def initialize(args)
-    super
+    @location = args.fetch[:location]
     @sprite = args.fetch[:sprite]
-  end
-
-  def draw
-    # Draws the `sprite` at `location`
   end
 
 end
